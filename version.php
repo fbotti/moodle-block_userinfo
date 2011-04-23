@@ -15,4 +15,13 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+/**
+ *
+ * @package    moodlecore
+ * @subpackage block
+ * @copyright  2011 Federico J. Botti - Entornos Educativos
+ * @author     2011 Federico J. Bott <federico@entornos.com.ar>
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
 $plugin->version = 2011042200;
