@@ -16,16 +16,25 @@ class block_user_info extends block_base {
         $this->content->text = '';
 
         if (isloggedin()) {
- 	        $this->content->text.= $USER->firstname.' '.$USER->lastname;
- 	        $this->content->text.= $OUTPUT->pix_url('pix/tape2','block');
- 	        $this->content->text.= '<span style="background:url(\'http://localhost/moodle20/blocks/user_info/pix/tape2.png\') no-repeat scroll 0 0 transparent"></span>';
-			$this->content->text.= $OUTPUT->user_picture($USER, array('size'=>100, 'class'=>'userinfoblock'));
-
+            $this->content->text.= '<div class="userinfoblock">';
+            $this->content->text.= '<br /><span></span>';
+            $this->content->text.= $OUTPUT->user_picture($USER, array('size' => 100, 'class' => 'userinfoblockimg'));
+            $this->content->text.= "<br/><a href=\"$CFG->wwwroot/user/profile.php?id=$USER->id\">".fullname($USER,true)."</a>";
+            $this->content->text.= '</div>';
+            $this->content->text.= '<br />';
+            $this->content->text.= '<a href="'.$CFG->wwwroot.'/user/editadvanced.php?id='.$USER->id.'">'
+                        .'<img src="'.$OUTPUT->pix_url('i/edit').'" />&nbsp;Edit my profile</a><br />';
+            $this->content->text.= '<a href="'.$CFG->wwwroot.'/message/index.php">'
+                    .'<img src="'.$OUTPUT->pix_url('message','block_user_info').'" />&nbsp;Messages</a><br />';
+            $this->content->text.= '<a href="'.$CFG->wwwroot.'/course/index.php">'
+                    .'<img src="'.$OUTPUT->pix_url('i/course').'" />&nbsp;My courses</a><br /><br />';
+            $this->content->text.= $USER->lastlogin;
         }
 
         $this->content->footer = '';
         return $this->content;
     }
+
 }
 ?>
 

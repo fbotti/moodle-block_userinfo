@@ -1,23 +1,19 @@
 .block .content .userinfoblock{
-	background: none repeat scroll 0 0 #FFFFFF;
-	border: 1px solid #CCCCCC;
-	padding: 4px;
 	margin:auto;
-	position:center;
+   text-align: center;
 }
 .block .content .userinfoblock img{
     height: 100px;
-    margin-right: 4px;
+    width: 100px;
+    padding: 4px;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+}
+.block .content .userinfoblock span{
+    background:url([[pix:block_user_info|tape2]]) no-repeat scroll transparent;display: block;
+    height: 22px;
+    left: 50px;
+    position:absolute;
+    margin-top:-10px;
     width: 100px;
 }
-/*
-.block .content span {
-    background: url("pix/tape2.png") no-repeat scroll 0 0 transparent;
-    display: block;
-    height: 32px;
-    left: 30px;
-    position: absolute;
-    top: -13px;
-    width: 115px;
-}
-*/
