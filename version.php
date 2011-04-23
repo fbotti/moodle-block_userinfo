@@ -21,7 +21,8 @@
  * @subpackage block
  * @copyright  2011 Federico J. Botti - Entornos Educativos
  * @author     2011 Federico J. Bott <federico@entornos.com.ar>
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @version    0.5
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 $plugin->version = 2011042200;

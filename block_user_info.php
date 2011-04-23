@@ -21,20 +21,21 @@
  * @subpackage block
  * @copyright  2011 Federico J. Botti - Entornos Educativos
  * @author     2011 Federico J. Bott <federico@entornos.com.ar>
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @version    0.5
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
-require_once('message/lib.php');
 
 class block_user_info extends block_base {
 
     function init() {
-        $this->title = $this->salute();
+        $this->title = get_string('pluginname','block_user_info');
     }
 
     function get_content() {
         global $CFG, $OUTPUT, $USER;
-
+        
+        require_once($CFG->dirroot.'/message/lib.php');
+        
         if ($this->content !== NULL) {
             return $this->content;
         }
@@ -43,6 +44,7 @@ class block_user_info extends block_base {
         $this->content->text = '';
 
         if (isloggedin()) {
+            $this->title = $this->salute();
             $this->content->text.= '<div class="userinfoblock">';
             $this->content->text.= '<br /><span></span>';
             $this->content->text.= $OUTPUT->user_picture($USER, array('size' => 100, 'class' => 'userinfoblockimg'));
