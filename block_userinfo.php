@@ -1,4 +1,4 @@
-<?php //$Id: block_user_info.php,v 0.5 2011-04-22 22:00:00 fbotti Exp $
+<?php //$Id: block_userinfo.php,v 0.5 2011-04-22 22:00:00 fbotti Exp $
 
 // This file is part of Moodle - http://moodle.org/
 //
@@ -25,10 +25,10 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-class block_user_info extends block_base {
+class block_userinfo extends block_base {
 
     function init() {
-        $this->title = get_string('pluginname','block_user_info');
+        $this->title = get_string('pluginname','block_userinfo');
     }
 
     function get_content() {
@@ -53,14 +53,14 @@ class block_user_info extends block_base {
             $this->content->text.= '</div>';
             $this->content->text.= '<br />';
             $this->content->text.= '<a href="'.$CFG->wwwroot.'/user/editadvanced.php?id='.$USER->id.'">'
-                        .'<img src="'.$OUTPUT->pix_url('i/edit').'" />&nbsp;'.get_string('editmyprofile','block_user_info').'</a><br />';
+                        .'<img src="'.$OUTPUT->pix_url('i/edit').'" />&nbsp;'.get_string('editmyprofile','block_userinfo').'</a><br />';
             $this->content->text.= '<a href="'.$CFG->wwwroot.'/message/index.php">'
-                    .'<img src="'.$OUTPUT->pix_url('message','block_user_info').'" />&nbsp;'.get_string('messages','block_user_info')
+                    .'<img src="'.$OUTPUT->pix_url('message','block_userinfo').'" />&nbsp;'.get_string('messages','block_userinfo')
                     .'&nbsp;('.message_count_unread_messages($USER).')</a><br />';
             $this->content->text.= '<a href="'.$CFG->wwwroot.'/course/index.php">'
-                    .'<img src="'.$OUTPUT->pix_url('i/course').'" />&nbsp;'.get_string('mycourses','block_user_info').'</a><br /><br />';
+                    .'<img src="'.$OUTPUT->pix_url('i/course').'" />&nbsp;'.get_string('mycourses','block_userinfo').'</a><br /><br />';
             $this->content->text.= '<span class="lastaccess">'.get_string('lastaccess').': '
-                    .date(get_string('strftimedate','block_user_info'), $USER->lastlogin).'</span>';
+                    .date(get_string('strftimedate','block_userinfo'), $USER->lastlogin).'</span>';
         }
 
         $this->content->footer = '';
@@ -77,13 +77,12 @@ class block_user_info extends block_base {
 				If ($ut > 24) { $ut = $ut - 24; }
 			}
 			if ($ut < 12) {
-				return get_string('morning', 'block_user_info');
+				return get_string('morning', 'block_userinfo');
 			} elseif (($ut >=12 ) and ($ut < 19 )) {
-				return get_string('afternoon', 'block_user_info');
+				return get_string('afternoon', 'block_userinfo');
 			} else {
-				return get_string('night', 'block_user_info');
+				return get_string('night', 'block_userinfo');
 			}
     }
 }
 ?>
-

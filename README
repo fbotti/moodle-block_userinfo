@@ -31,10 +31,10 @@ information about the last access to the LMS.
 
 Installation:
 
-1- Place the user_info folder (if you have downloaded zipped then you have to unzip 
+1- Place the userinfo folder (if you have downloaded zipped then you have to unzip 
 it) into the blocks folder under the root of your Moodle installation.
 2- Go to the notifications page and Moodle will automatically install this new
 block. 
-3- Turn Editing on and add the block "User Information". 
+3- Turn Editing on and add the block "User Information block". 
 4- That's it. Enjoy it!
  

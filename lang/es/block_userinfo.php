@@ -1,6 +1,7 @@
 <?php
     
-    $string['pluginname'] = 'Informaci&oacute;n de usuario'; 
+    $string['pluginname'] = 'Bloque de Informaci&oacute;n de usuario'; 
+    $string['userinfo'] = 'Informaci&oacute;n de usuario';
     $string['strftimedate'] = 'l jS \of F Y h:i:s A';
     $string['mycourses'] = 'Mis cursos';
     $string['editmyprofile'] = 'Editar mi perfil';

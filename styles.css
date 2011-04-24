@@ -10,7 +10,7 @@
     border: 1px solid #CCCCCC;
 }
 .block .content .userinfoblock span{
-    background:url([[pix:block_user_info|tape2]]) no-repeat scroll transparent;display: block;
+    background:url([[pix:block_userinfo|tape2]]) no-repeat scroll transparent;display: block;
     height: 22px;
     left: 50px;
     position:absolute;
