@@ -28,14 +28,13 @@
 class block_userinfo extends block_base {
 
     function init() {
-        $this->title = get_string('pluginname','block_userinfo');
+        $this->title = get_string('userinfo','block_userinfo');
+        $this->version = 2011042500;
     }
 
     function get_content() {
-        global $CFG, $OUTPUT, $USER;
-        
-        require_once($CFG->dirroot.'/message/lib.php');
-        
+        global $CFG, $USER, $COURSE;
+              
         if ($this->content !== NULL) {
             return $this->content;
         }
@@ -46,21 +45,23 @@ class block_userinfo extends block_base {
         if (isloggedin()) {
             $this->title = $this->salute();
             $this->content->text.= '<div class="userinfoblock">';
-            $this->content->text.= '<br /><span></span>';
-            $this->content->text.= $OUTPUT->user_picture($USER, array('size' => 100, 'class' => 'userinfoblockimg'));
-            $this->content->text.= "<br/><a href=\"$CFG->wwwroot/user/profile.php?id=$USER->id\">".fullname($USER,true)."</a>&nbsp;"
+            $this->content->text.= '<br />';
+            $this->content->text.= print_user_picture($USER, $COURSE->id, $USER->picture, '100px', true, false);
+            $this->content->text.= "<br/><a href=\"$CFG->wwwroot/user/view.php?id=$USER->id\">".fullname($USER,true)."</a>&nbsp;"
                     ."(<a href=\"$CFG->wwwroot/login/logout.php?sesskey=".sesskey()."\">".get_string('logout').'</a>)';
             $this->content->text.= '</div>';
             $this->content->text.= '<br />';
             $this->content->text.= '<a href="'.$CFG->wwwroot.'/user/editadvanced.php?id='.$USER->id.'">'
-                        .'<img src="'.$OUTPUT->pix_url('i/edit').'" />&nbsp;'.get_string('editmyprofile','block_userinfo').'</a><br />';
+                        .'<img src="'.$CFG->pixpath.'/i/edit.gif" />&nbsp;'.get_string('editmyprofile','block_userinfo').'</a><br />';
             $this->content->text.= '<a href="'.$CFG->wwwroot.'/message/index.php">'
-                    .'<img src="'.$OUTPUT->pix_url('message','block_userinfo').'" />&nbsp;'.get_string('messages','block_userinfo')
-                    .'&nbsp;('.message_count_unread_messages($USER).')</a><br />';
+                    .'<img src="'.$CFG->wwwroot.'/blocks/userinfo/pix/message.gif" />&nbsp;'.get_string('messages','block_userinfo')
+                    .'&nbsp;('.$this->message_count_unread_messages($USER).')</a><br />';
             $this->content->text.= '<a href="'.$CFG->wwwroot.'/course/index.php">'
-                    .'<img src="'.$OUTPUT->pix_url('i/course').'" />&nbsp;'.get_string('mycourses','block_userinfo').'</a><br /><br />';
+                    .'<img src="'.$CFG->pixpath.'/i/course.gif" />&nbsp;'.get_string('mycourses','block_userinfo').'</a><br /><br />';
+            //$format = get_string('strftimedate','block_userinfo');
+            $format = 'l jS \of F Y h:i:s A';
             $this->content->text.= '<span class="lastaccess">'.get_string('lastaccess').': '
-                    .date(get_string('strftimedate','block_userinfo'), $USER->lastlogin).'</span>';
+                    .date($format, $USER->lastlogin).'</span>';
         }
 
         $this->content->footer = '';
@@ -83,6 +84,19 @@ class block_userinfo extends block_base {
 			} else {
 				return get_string('night', 'block_userinfo');
 			}
+    }
+    function message_count_unread_messages(){
+        global $CFG, $USER;
+        
+        $users = get_records_sql("SELECT m.useridfrom as id, COUNT(m.useridfrom) as count,
+                                         u.firstname, u.lastname, u.picture, u.imagealt, u.lastaccess
+                                       FROM {$CFG->prefix}user u, 
+                                            {$CFG->prefix}message m 
+                                       WHERE m.useridto = '$USER->id' 
+                                         AND u.id = m.useridfrom
+                                    GROUP BY m.useridfrom, u.firstname,u.lastname,u.picture,u.lastaccess,u.imagealt");
+        if (empty($users)) return 0;                                            
+        return count($users);
     }
 }
 ?>

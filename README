@@ -33,8 +33,20 @@ Installation:
 
 1- Place the userinfo folder (if you have downloaded zipped then you have to unzip 
 it) into the blocks folder under the root of your Moodle installation.
+
+NOTE: if you have downloaded this package directly from github.com/fbotti then 
+you must know that this package has two branches: 
+    * 'master' branch: contains last Moodle Stable version (today it would be 
+the v.2.0.x)
+    * 'MOODLE_19_STABLE' branch: contains the functionality for the last Moodle
+v.1.9.x. 
+If you have Moodle 1.9.x version then maybe you will have to checkout MOODLE_19_STABLE
+version. Just type 'git checkout MOODLE_19_STABLE' in your console for tha.
+
 2- Go to the notifications page and Moodle will automatically install this new
 block. 
-3- Turn Editing on and add the block "User Information block". 
+3- Turn Editing on and add the block "User Information". 
 4- That's it. Enjoy it!
+ 
+
  
