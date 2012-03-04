@@ -27,6 +27,6 @@
 
 $plugin->version = 2012030300;
 
-$module->maturity  = MATURITY_STABLE;
-$module->release   = "2.2.x (20120303)"; // User-friendly version number
+$plugin->maturity  = MATURITY_STABLE;
+$plugin->release   = "2.2.x (20120303)"; // User-friendly version number
 
