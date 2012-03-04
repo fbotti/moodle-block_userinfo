@@ -32,7 +32,7 @@ class block_userinfo extends block_base {
     }
 
     function get_content() {
-        global $CFG, $OUTPUT, $USER;
+        global $CFG, $OUTPUT, $USER, $COURSE;
         
         require_once($CFG->dirroot.'/message/lib.php');
         
@@ -52,7 +52,7 @@ class block_userinfo extends block_base {
                     ."(<a href=\"$CFG->wwwroot/login/logout.php?sesskey=".sesskey()."\">".get_string('logout').'</a>)';
             $this->content->text.= '</div>';
             $this->content->text.= '<br />';
-            $this->content->text.= '<a href="'.$CFG->wwwroot.'/user/editadvanced.php?id='.$USER->id.'">'
+            $this->content->text.= '<a href="'.$CFG->wwwroot.'/user/edit.php?id='.$USER->id.'&course='.$COURSE->id.'">'
                         .'<img src="'.$OUTPUT->pix_url('i/edit').'" />&nbsp;'.get_string('editmyprofile','block_userinfo').'</a><br />';
             $this->content->text.= '<a href="'.$CFG->wwwroot.'/message/index.php">'
                     .'<img src="'.$OUTPUT->pix_url('message','block_userinfo').'" />&nbsp;'.get_string('messages','block_userinfo')
