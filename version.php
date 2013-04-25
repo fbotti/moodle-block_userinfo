@@ -27,6 +27,8 @@
 
 $plugin->version = 2013042500;
 
+$plugin->requires = 2012110900;
+
 $plugin->maturity  = MATURITY_STABLE;
 $plugin->release   = "2.4 (2013042500)"; // User-friendly version number
 
