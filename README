@@ -1,4 +1,4 @@
-User Information Block for Moodle (http://moodle.org/) - Copyright (C) 2011-2012  Federico Botti
+User Information Block for Moodle (http://moodle.org/) - Copyright (C) 2011-2013  Federico Botti
 
 This block intends to give the user a few shortcuts in order to navigate quickly through every Moodle site. Besides it advices the user about unread messages and information about the last access to the LMS. It's already translated into spanish, english, portuguese and chinese. 
 
@@ -15,7 +15,7 @@ GNU General Public License for more details: http://www.gnu.org/copyleft/gpl.htm
 
 Created by:
 
-* Federico Botti (fbotti) 
+* Federico Botti (fbotti - federico@entornos.com.ar) 
 
 Features:
 

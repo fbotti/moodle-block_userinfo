@@ -19,14 +19,14 @@
  *
  * @package    moodlecore
  * @subpackage block
- * @copyright  2011 Federico J. Botti - Entornos Educativos
- * @author     2011 Federico J. Bott <federico@entornos.com.ar>
- * @version    0.5
+ * @copyright  2013 Federico J. Botti - Entornos Educativos
+ * @author     2013 Federico J. Bott <federico@entornos.com.ar>
+ * @version    1.0
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$plugin->version = 2012030300;
+$plugin->version = 2013042500;
 
 $plugin->maturity  = MATURITY_STABLE;
-$plugin->release   = "2.2.x (20120303)"; // User-friendly version number
+$plugin->release   = "2.4 (2013042500)"; // User-friendly version number
 

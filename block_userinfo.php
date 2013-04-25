@@ -19,9 +19,9 @@
  *
  * @package    moodlecore
  * @subpackage block
- * @copyright  2011 Federico J. Botti - Entornos Educativos
- * @author     2011 Federico J. Bott <federico@entornos.com.ar>
- * @version    0.5
+ * @copyright  2013 Federico J. Botti - Entornos Educativos
+ * @author     2013 Federico J. Botti <federico@entornos.com.ar>
+ * @version    1.0
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
