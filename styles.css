@@ -12,10 +12,11 @@
 .block .content .userinfoblock span{
     background:url([[pix:block_userinfo|tape2]]) no-repeat scroll transparent;display: block;
     height: 22px;
-    left: 50px;
-    position:absolute;
+    position:relative;
     margin-top:-10px;
     width: 100px;
+    top:10px;
+    margin: auto;
 }
 .lastaccess{
     font-size: 10px;
